@@ -11,7 +11,7 @@ public class test {
 		test test = new test();
 		test.funtion(a);
 
-		funtion2(a); // static으로 선언된 정적메소드, 인스턴트없이 사용가능
+		funtion2(a); // static으로 선언된 정적메소드, 인스턴트없이 사용가능asd
 	}
 	private static void funtion2(int a) {
 		c = a;
