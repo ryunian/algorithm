@@ -1,3 +1,5 @@
+package complete;
+
 import java.util.Scanner;
 public class _1110 {
     public static void main(String[] args){
@@ -21,6 +23,6 @@ public class _1110 {
     		if(x==y) break;    		
     	}
     	System.out.println(count);
-    	
+
     }
 }

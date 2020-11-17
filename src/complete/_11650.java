@@ -1,3 +1,5 @@
+package complete;
+
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -7,16 +9,16 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-class Number implements Comparable<Number>{
+class Numbers implements Comparable<Numbers>{
 	int a;
 	int b;
-	public Number(int a, int b) {
+	public Numbers(int a, int b) {
 		this.a = a;
 		this.b = b;
 	}
 	
 	@Override
-	public int compareTo(Number o) {
+	public int compareTo(Numbers o) {
 		if(this.a < o.a) {
 			return -1;
 		}else if(this.a == o.a) {
@@ -34,30 +36,31 @@ class Number implements Comparable<Number>{
 }
 
 public class _11650 {
-//	static int[] temp;
+	
+	//	static int[] temp;
 	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(System.in);
 		int num = sc.nextInt();
 //		temp = new int[num];
-//		List<Number> number = new ArrayList<>();
-		Number[] number2 = new Number[num];
-		for(int i=0; i<num; i++) {
+//		List<Numbers> Numbers = new ArrayList<>();
+		Numbers[] Numbers2 = new Numbers[num];
+		for (int i = 0; i < num; i++) {
 			int x = sc.nextInt();
 			int y = sc.nextInt();
-//			number.add(new Number(x,y));
-			number2[i] = new Number(x,y);
+//			Numbers.add(new Numbers(x,y));
+			Numbers2[i] = new Numbers(x, y);
 		}
-//		Collections.sort(number);
-		Collections.sort(Arrays.asList(number2));
+//		Collections.sort(Numbers);
+		Collections.sort(Arrays.asList(Numbers2));
 //		System.out.println("-----------");
-//		for(int i=0; i<number.size();i++) {
-//			System.out.println(number.get(i).a+" "+number.get(i).b);
+//		for(int i=0; i<Numbers.size();i++) {
+//			System.out.println(Numbers.get(i).a+" "+Numbers.get(i).b);
 //		}
 //		System.out.println("-----------");
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));		
-		for(Number i : number2) {
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		for (Numbers i : Numbers2) {
 //			System.out.println(i.a+" "+i.b);
-			bw.write(i.a+" "+i.b+"\n");		
+			bw.write(i.a + " " + i.b + "\n");
 		}
 		bw.flush();
 //		System.out.println(Arrays.toString(a));
@@ -67,7 +70,7 @@ public class _11650 {
 //		System.out.println(Arrays.toString(a));
 //		System.out.println(Arrays.toString(b));
 //		int[] result = new int[num];
-		
+
 	}
 
 //	private static void mergesort(int[] arr, int start, int end) {

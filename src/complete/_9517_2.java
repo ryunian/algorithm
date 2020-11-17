@@ -1,4 +1,4 @@
-// ¼ôÄÚµù
+package complete;// ¼ôÄÚµù
 import java.util.Scanner;
 public class _9517_2 {
 	public static void main(String[] args) {

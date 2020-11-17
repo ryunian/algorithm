@@ -1,4 +1,4 @@
-// 효율적인 메모리
+package complete;// 효율적인 메모리
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

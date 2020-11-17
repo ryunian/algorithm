@@ -1,3 +1,5 @@
+package complete;
+
 import java.util.Scanner;
 public class _2869 {
 	public static void main(String[] args){

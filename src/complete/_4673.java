@@ -1,3 +1,4 @@
+package complete;
 
 public class _4673 {
 	public static boolean selfNumber(int x) {
