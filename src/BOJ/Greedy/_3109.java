@@ -1,3 +1,5 @@
+package BOJ.Greedy;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -33,29 +35,29 @@ public class _3109 {
 //        }
 
         for (int i = 1; i <= n; i++) {
-            solution(i, 1, 0);
-            System.out.println();
+            cnt += solution(i, 1, 0);
         }
 //        System.out.println();
         System.out.println(cnt);
     }
 
-    private static void solution(int x, int y, int z) {
-        if (z == m-1) {
-            System.out.println(">>>>>>  " + x);
-            cnt++;
-            return;
+    private static int solution(int x, int y, int z) {
+        if (y == m-1) {
+            return 1;
         }
         int[][] dir = {{-1, 1}, {0, 1}, {1, 1}};
         for (int i = 0; i < 3; i++) {
+
             int x2 = x + dir[i][0];
             int y2 = y + dir[i][1];
-            System.out.println(x + "  "+y + "     //"+arr[x][y]+arr[x2][y2]+ "    //"+x2 + "  "+ y2);
-            if ( arr[x2][y2]) {
-                arr[x][y] = false;
+//            System.out.println(x + "  "+y + "     //"+arr[x][y]+arr[x2][y2]+ "    //"+x2 + "  "+ y2);
+            if (arr[x2][y2]) {
+                arr[x2][y2] = false;
 //                System.out.println(x +"   "+ y);
-                solution(x2, y2, ++z);
+                int result = solution(x2, y2, ++z);
+                if(result != 0) return result;
             }
         }
+        return 0;
     }
 }
