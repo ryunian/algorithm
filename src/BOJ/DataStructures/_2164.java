@@ -1,4 +1,4 @@
-package complete;
+package BOJ.DataStructures;
 
 import java.io.BufferedReader;
 import java.io.IOException;
