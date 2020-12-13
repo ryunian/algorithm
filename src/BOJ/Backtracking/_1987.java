@@ -1,4 +1,4 @@
-package BOJ.Graph;
+package BOJ.Backtracking;
 
 import java.io.BufferedReader;
 import java.io.IOException;

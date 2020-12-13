@@ -1,4 +1,4 @@
-package complete;
+package BOJ.Mathematics;
 
 import java.util.Scanner;
 public class _1110 {

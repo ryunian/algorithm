@@ -1,4 +1,4 @@
-package complete;
+package BOJ.Dynamic;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

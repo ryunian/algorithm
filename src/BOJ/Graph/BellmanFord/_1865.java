@@ -1,4 +1,4 @@
-package BOJ.BellmanFord;
+package BOJ.Graph.BellmanFord;
 
 import java.io.BufferedReader;
 import java.io.IOException;
