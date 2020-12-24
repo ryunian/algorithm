@@ -1,4 +1,4 @@
-package BOJ;
+package BOJ.DataStructures.Trie;
 
 import java.io.BufferedReader;
 import java.io.IOException;

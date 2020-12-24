@@ -7,7 +7,6 @@ import java.util.StringTokenizer;
 
 public class _1074 {
     static int n, m, o, size;
-    static int[][] pos = {{0, 0}, {0, 1}, {1, 0}, {1, 1}};
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -17,26 +16,36 @@ public class _1074 {
         o = Integer.parseInt(st.nextToken()); // 열
         size = (int) Math.pow(2, n);
 
-        solve(0, 0, 0, size);
+        solve(0, 0, size, 0);
     }
 
-    private static void solve(int x, int y, int cnt, int divSize) {
-        if (divSize == 2) {
-            for (int i = 0; i < 4; i++) {
-                int nx = x + pos[i][0];
-                int ny = y + pos[i][1];
-                if (nx == m && ny == o) {
-                    System.out.println(cnt + i);
-                    System.exit(0);
-                }
+    private static void solve(int x, int y, int divSize, int cnt) {
+        if (divSize == 1) {
+            if (x == m && y == o) {
+                System.out.println(cnt);
             }
             return;
         }
+
         // 분할
         int div = divSize / 2;
-        solve(x, y, cnt * 4, div);
-        solve(x, y + div, cnt * 4 + 4, div);
-        solve(x + div, y, cnt * 4 + 8, div);
-        solve(x + div, y + div, cnt * 4 + 12, div);
+        int nx = div + x;
+        int ny = div + y;
+        // 2사분면
+        if(m < nx && o < ny){
+            solve(x, y, div, cnt);
+        }
+        // 1사분면
+        else if(m < nx && o >= ny){
+            solve(x, y + div, div, cnt + (div * div));
+        }
+        // 3사분면
+        else if(m >= nx && o < ny){
+            solve(x + div, y, div, cnt + (div * div)*2);
+        }
+        // 4사분면
+        else if(m >= nx && o >= ny){
+            solve(x + div, y + div, div, cnt + (div * div) * 3);
+        }
     }
 }
