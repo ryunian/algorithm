@@ -1,4 +1,4 @@
-package BOJ.Graph;
+package BOJ.Graph.Dijkstra;
 
 import java.io.BufferedReader;
 import java.io.IOException;
