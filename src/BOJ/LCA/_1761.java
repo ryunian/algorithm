@@ -22,7 +22,7 @@ public class _1761 {
         n = Integer.parseInt(br.readLine());
 
         visit = new boolean[n];
-        parent = new int[n][21][2]; // 왜 21이지?
+        parent = new int[n][21][2];
         deep = new int[n];
         list = new ArrayList[n];
 
