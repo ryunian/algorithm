@@ -1,4 +1,4 @@
-package BOJ.DivdeAndConquer;
+package BOJ.DivideAndConquer;
 
 import java.io.BufferedReader;
 import java.io.IOException;

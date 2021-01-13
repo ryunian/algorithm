@@ -1,4 +1,4 @@
-package JongManBook.Greedy;
+package JongManBook.BruteForce;
 
 import java.util.Arrays;
 import java.util.Scanner;
