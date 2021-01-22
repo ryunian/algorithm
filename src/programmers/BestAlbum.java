@@ -33,7 +33,7 @@ class Song implements Comparable<Song> {
     }
 }
 
-    public class 베스트앨범 {
+    public class BestAlbum {
         public int[] solution(String[] genres, int[] plays) {
             Map<String, Integer> map = new HashMap<>();
 
@@ -86,7 +86,7 @@ class Song implements Comparable<Song> {
 //            int[] plays =  {1, 2, 3, 4, 5, 6};
             System.out.println(Arrays.toString(gennres));
             System.out.println(Arrays.toString(plays));
-            베스트앨범 test = new 베스트앨범();
+            BestAlbum test = new BestAlbum();
             int[] result = test.solution(gennres, plays);
             System.out.println();
             System.out.println(Arrays.toString(result));

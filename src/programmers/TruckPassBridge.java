@@ -13,7 +13,7 @@ class QueueInfo{
     }
 }
 
-public class 다리를지나는트럭 {
+public class TruckPassBridge {
     public int solution(int bridge_length, int weight, int[] truck_weights) {
         int answer = 0;
         Queue<QueueInfo> queue = new LinkedList<>();
@@ -55,7 +55,7 @@ public class 다리를지나는트럭 {
         int weight = 100;
         int[] truck_weights = {10,10,10,10,10,10,10,10,10,10};
 
-        다리를지나는트럭 main = new 다리를지나는트럭();
+        TruckPassBridge main = new TruckPassBridge();
         int x = main.solution(bridge_length,weight,truck_weights);
         System.out.println(x); // 8
     }
