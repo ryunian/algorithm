@@ -1,4 +1,4 @@
-package BOJ;
+package BOJ.Graph.FloydWarshall;
 
 import java.io.BufferedReader;
 import java.io.IOException;
