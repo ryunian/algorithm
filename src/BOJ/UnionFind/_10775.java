@@ -1,4 +1,4 @@
-package BOJ.Greedy;
+package BOJ.UnionFind;
 
 import java.io.BufferedReader;
 import java.io.IOException;

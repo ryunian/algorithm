@@ -1,4 +1,4 @@
-package BOJ;
+package BOJ.BinarySearch;
 
 import java.io.BufferedReader;
 import java.io.IOException;

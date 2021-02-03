@@ -1,4 +1,4 @@
-package BOJ.DataStructures;
+package BOJ.UnionFind;
 
 import java.io.BufferedReader;
 import java.io.IOException;
