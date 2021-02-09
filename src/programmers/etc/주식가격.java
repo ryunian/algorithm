@@ -1,4 +1,4 @@
-package programmers;
+package programmers.etc;
 
 import java.util.Arrays;
 import java.util.Stack;

@@ -1,4 +1,4 @@
-package programmers;
+package programmers.etc;
 
 public class 전화번호목록 {
     public boolean solution(String[] phone_book) {
