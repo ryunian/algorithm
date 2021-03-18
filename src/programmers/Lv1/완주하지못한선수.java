@@ -1,4 +1,4 @@
-package programmers.etc;
+package programmers.Lv1;
 
 import java.util.*;
 
