@@ -30,7 +30,7 @@ public class _2630 {
 //            }
 //            System.out.println();
 //        }
-        System.out.println(blue > 0 ? white : 0);
+        System.out.println(white);
         System.out.println(blue);
     }
 
