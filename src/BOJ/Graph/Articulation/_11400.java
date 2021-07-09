@@ -8,7 +8,7 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
-// 단절점
+// 단절선
 // 단절점과 같이 DFS를 이용하는 방식으로
 //   A번째 정점에서 부모로 가는 간선이 아닌 간선 중에서
 //   아직 방문안한 노드의 방문번호가 현재 방문번호보다 클 경우 단절선이 된다.
