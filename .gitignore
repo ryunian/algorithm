@@ -1,5 +1,4 @@
 # Project exclude paths
 /out/
 /.idea
-/BaekJoon.iml
-algorithm.iml
+*.iml
