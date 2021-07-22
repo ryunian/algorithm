@@ -1,42 +1,27 @@
 package BOJ.Implementation;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
-public class _14503 {
+public class _14503_2 {
     public static int n, m, startX, startY, dir, cnt;
     // 북 동 남 서
     public static int[] dx = {-1, 0, 1, 0};
     public static int[] dy = {0, 1, 0, -1};
     public static int[][] arr;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
         // BufferedReader 를 사용시 시간 92ms 이 걸리나 Scanner 사용시 176ms 가 걸린다.
-        // Scanner 를 사용한 버전은 다른 파일을 다운해주세요
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        // split 사용시
-        /*
-        String[] tmp = br.readLine().split(" ");
-        n = Integer.parseInt(tmp[0]);
-        m = Integer.parseInt(tmp[1]);
-         */
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        n = Integer.parseInt(st.nextToken());
-        m = Integer.parseInt(st.nextToken());
-
-
-        st = new StringTokenizer(br.readLine());
-        startX = Integer.parseInt(st.nextToken());
-        startY = Integer.parseInt(st.nextToken());
-        dir = Integer.parseInt(st.nextToken()); // 방향
+        Scanner sc = new Scanner(System.in);
+        n = sc.nextInt();
+        m = sc.nextInt();
+        startX = sc.nextInt();
+        startY = sc.nextInt();
+        dir = sc.nextInt(); // 방향
         arr = new int[n][m];
 
         for (int i = 0; i < n; i++) {
-            st = new StringTokenizer(br.readLine());
             for (int j = 0; j < m; j++) {
-                arr[i][j] = Integer.parseInt(st.nextToken());
+                arr[i][j] = sc.nextInt();
             }
         }
 
@@ -130,7 +115,7 @@ public class _14503 {
         // 2-d 종료
     }
 
-    // 주변이 '청소' 되어있거나 '벽'인 경우를 체크하는 함수
+    // 주변이 '청소' 되어있거나 '벽'인 경우를 체크하는 메소드
     // 함수이름은 귀찬아서... , 보통 boolean 값을 반환하는 함수의 이름은 is~~~ 으로 작성함
     public static boolean isPossible(int x, int y) {
         for (int i = 0; i < 4; i++) {
