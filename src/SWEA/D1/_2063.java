@@ -1,4 +1,4 @@
-package SWexpert.D1;
+package SWEA.D1;
 
 import java.util.Arrays;
 import java.util.Scanner;

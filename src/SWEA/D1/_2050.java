@@ -1,15 +1,14 @@
-package SWexpert.D1;
+package SWEA.D1;
 
 import java.util.Scanner;
 
-public class _2058 {
+public class _2050 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
-        int sum = 0;
         for (int i = 0; i < str.length(); i++) {
-            sum += str.charAt(i) - '0';
+            int res = str.charAt(i) - 'A' + 1;
+            System.out.print(res + " ");
         }
-        System.out.println(sum);
     }
 }

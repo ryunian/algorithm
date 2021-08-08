@@ -1,4 +1,4 @@
-package SWexpert.D4;
+package SWEA.D4;
 
 import java.util.Scanner;
 import java.util.Stack;

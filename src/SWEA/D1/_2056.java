@@ -1,4 +1,4 @@
-package SWexpert.D1;
+package SWEA.D1;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
