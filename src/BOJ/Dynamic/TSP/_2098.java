@@ -1,10 +1,11 @@
-package BOJ.BitMask;
+package BOJ.Dynamic.TSP;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+// 외판원 순회
 public class _2098 {
     static int n, INF = 987654321;
     static int[][] matrix, dp;
