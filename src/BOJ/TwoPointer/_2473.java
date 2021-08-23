@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
+// 세용액
 public class _2473 {
     static int n;
     static long min = Long.MAX_VALUE;
@@ -22,27 +23,27 @@ public class _2473 {
         }
         Arrays.sort(arr);
         toPoint();
-        System.out.println(result[0]+" "+result[1]+" "+result[2]);
+        System.out.println(result[0] + " " + result[1] + " " + result[2]);
     }
 
     private static void toPoint() {
         long sum;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n - 2; i++) {
             int j = i + 1;
-            int k = n -1;
-            while(j < k){
+            int k = n - 1;
+            while (j < k) {
                 sum = arr[i] + arr[j] + arr[k];
-                if(Math.abs(sum) < min){
+                if (Math.abs(sum) < min) {
                     min = Math.abs(sum);
                     result[0] = arr[i];
                     result[1] = arr[j];
                     result[2] = arr[k];
                 }
-                if(sum > 0){
+                if (sum > 0) {
                     k--;
-                }else if(sum < 0){
+                } else if (sum < 0) {
                     j++;
-                }else{
+                } else {
                     return;
                 }
             }
