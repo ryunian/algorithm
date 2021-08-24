@@ -1,4 +1,4 @@
-package BOJ.Graph.MST;
+package BOJ.Graph.MST.Kruskal;
 
 import java.io.BufferedReader;
 import java.io.IOException;
