@@ -1,4 +1,4 @@
-package BOJ.KMP;
+package BOJ.String.KMP;
 
 import java.util.Arrays;
 import java.util.Scanner;

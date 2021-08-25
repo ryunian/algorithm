@@ -1,4 +1,4 @@
-package BOJ.LCA;
+package BOJ.Graph.LCA;
 
 import java.io.BufferedReader;
 import java.io.IOException;
