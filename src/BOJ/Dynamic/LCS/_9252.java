@@ -1,4 +1,4 @@
-package BOJ.Dynamic;
+package BOJ.Dynamic.LCS;
 
 import java.io.BufferedReader;
 import java.io.IOException;
