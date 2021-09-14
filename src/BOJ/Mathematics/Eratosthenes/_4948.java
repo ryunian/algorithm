@@ -1,4 +1,4 @@
-package BOJ.Mathematics;
+package BOJ.Mathematics.Eratosthenes;
 
 import java.util.Scanner;
 
