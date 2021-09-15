@@ -4,29 +4,20 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+// 1,2,3 더하기
 public class _9095 {
-    static int[] num;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(br.readLine());
-
-
-        for (int i = 0; i < n; i++) {
-            int val = Integer.parseInt(br.readLine());
-            num = new int[val+1];
-            num[0] = 1;
-            solve(1, val);
-            System.out.println(num[val]);
-        }
-    }
-
-    private static void solve(int x, int y) {
-        if(x < 3) num[x] = x;
-        else{
-            num[x] = num[x-1] + num[x-2] + num[x-3];
-        }
-        if(x != y){
-            solve(x+1, y);
+        int tc = Integer.parseInt(br.readLine());
+        while (tc-- > 0) {
+            int n = Integer.parseInt(br.readLine());
+            int[] dp = new int[10 + 1];
+            dp[0] = dp[1] = 1;
+            dp[2] = 2;
+            for (int i = 3; i <= n; i++) {
+                dp[i] = dp[i - 1] + dp[i - 2] + dp[i - 3];
+            }
+            System.out.println(dp[n]);
         }
     }
 }
