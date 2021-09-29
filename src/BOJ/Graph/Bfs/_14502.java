@@ -1,115 +1,86 @@
 package BOJ.Graph.Bfs;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.*;
 
+// 연구소
 public class _14502 {
-    static int[][] mapOrigin, mapCopy;
-    static boolean[][] check;
-    static int[][] pos = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
-    static int n, m;
-    static Queue<int[]> queue = new LinkedList<>();
-    static PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(Collections.reverseOrder());
+    static int n, m, safeCnt, res, cnt;
+    static int[] dx = {0, 0, -1, 1};
+    static int[] dy = {1, -1, 0, 0};
+    static int[][] map, visit;
+    static Queue<Node> virus;
 
+    static class Node {
+        int x, y;
+
+        public Node(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-        // 세로
+        StringTokenizer st = new StringTokenizer(br.readLine());
         n = Integer.parseInt(st.nextToken());
-        // 가로
         m = Integer.parseInt(st.nextToken());
+        map = new int[n][m];
+        visit = new int[n][m];
+        virus = new LinkedList<>();
 
-
-        mapOrigin = new int[n][m];
-        mapCopy = new int[n][m];
-
-        check = new boolean[n][m];
         for (int i = 0; i < n; i++) {
-            st = new StringTokenizer(br.readLine(), " ");
+            st = new StringTokenizer(br.readLine());
             for (int j = 0; j < m; j++) {
                 int state = Integer.parseInt(st.nextToken());
-                mapOrigin[i][j] = state;
-//                mapCopy[i][j] = state;
+                map[i][j] = state;
                 if (state == 2) {
-                    queue.add(new int[]{i, j});
+                    virus.add(new Node(i, j));
+                } else if (state == 0) {
+                    safeCnt++;
                 }
             }
         }
-        solution();
+
+        solve(0, 0);
+        System.out.println(res);
     }
 
-    private static void solution() {
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                if (mapOrigin[i][j] == 0) {
-                    mapOrigin[i][j] = 3;
-                    dfs(1);
-                    mapOrigin[i][j] = 0;
-                }
-            }
-        }
-        System.out.println(priorityQueue.peek());
-    }
-
-    // 벽을 세운다
-    private static void dfs(int cnt) {
-        if (cnt == 3) {
-            bfs();
+    private static void solve(int num, int wall) {
+        if (wall == 3) {
+            bfs(++cnt);
             return;
         }
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                if (mapOrigin[i][j] == 0) {
-                    mapOrigin[i][j] = 3;
-                    dfs(cnt + 1);
-                    mapOrigin[i][j] = 0;
-                }
+
+        for (int i = num; i < n * m; i++) {
+            int x = i / m;
+            int y = i % m;
+            if (map[x][y] == 0) {
+                map[x][y] = 1;
+                solve(i, wall + 1);
+                map[x][y] = 0;
             }
         }
     }
 
-    // 바이러스를 퍼트린다
-    private static void bfs() {
-        Queue<int[]> cpQueue = new LinkedList<>(queue);
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                mapCopy[i][j] = mapOrigin[i][j];
-            }
-        }
+    private static void bfs(int flag) {
+        Queue<Node> queue = new LinkedList<>();
+        queue.addAll(virus);
 
-        while (!cpQueue.isEmpty()) {
-            int[] value = cpQueue.poll();
+        int cnt = 0;
+        while (!queue.isEmpty()) {
+            Node cur = queue.poll();
+
             for (int i = 0; i < 4; i++) {
-                int nx = value[0] + pos[i][0];
-                int ny = value[1] + pos[i][1];
-                if (nx > -1 && nx < n && ny > -1 && ny < m && mapCopy[nx][ny] == 0) {
-                    mapCopy[nx][ny] = 2;
-                    cpQueue.add(new int[]{nx, ny});
-                }
+                int nx = cur.x + dx[i];
+                int ny = cur.y + dy[i];
+                if (nx < 0 || ny < 0 || nx >= n || ny >= m) continue;
+                if (map[nx][ny] != 0 || visit[nx][ny] == flag) continue;
+                cnt++;
+                visit[nx][ny] = flag;
+                queue.add(new Node(nx, ny));
             }
         }
-
-        int sum = 0;
-        for (int[] x : mapCopy) {
-            for (int y : x) {
-                if (y == 0) sum++;
-            }
-        }
-
-        priorityQueue.add(sum);
-    }
-
-    private static void print(int[][] arr) {
-        for (int[] x : arr) {
-            for (int y : x) {
-                System.out.print(y + " ");
-            }
-            System.out.println();
-        }
-        System.out.println();
+        res = Math.max(res, safeCnt - cnt - 3);
     }
 }
-
