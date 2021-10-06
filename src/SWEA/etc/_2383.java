@@ -64,15 +64,15 @@ public class _2383 {
 
     }
 
-    private static int time(PriorityQueue<Integer> a, int plus) {
-        PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.comparingInt(o -> o));
+    private static int time(PriorityQueue<Integer> pq, int plus) {
+        Queue<Integer> queue = new LinkedList<>();
         int time = -1;
-        while (!a.isEmpty() || !pq.isEmpty()) {
+        while (!pq.isEmpty() || !queue.isEmpty()) {
             time++;
-            while (!pq.isEmpty() && pq.peek() <= time) pq.poll();
-            while (pq.size() < 3 && !a.isEmpty() && a.peek() <= time) {
-                a.poll();
-                pq.add(time + plus);
+            while (!queue.isEmpty() && queue.peek() <= time) queue.poll();
+            while (queue.size() < 3 && !pq.isEmpty() && pq.peek() <= time) {
+                pq.poll();
+                queue.add(time + plus);
             }
         }
         return time;
