@@ -82,10 +82,10 @@ public class _5653_2 {
                     y == node.y;
         }
 
-        // contains 가 제대로 중복 확인을 안해줘서 31 대신 171731 이라는 소수를 사용
+        // contains 가 제대로 중복 확인을 안해줘서 31 대신 101531 이라는 소수를 사용
         @Override
         public int hashCode() {
-            final int prime = 171731;
+            final int prime = 101531;
             int result = 1;
             result = prime * result + x;
             result = prime * result + y;
